@@ -32,7 +32,6 @@
 }
 
 .cap__picture {
-  display: none;
   position: absolute;
   top: 0;
   right: 0;
@@ -43,9 +42,6 @@
   transition-duration: $transition-duration;
   &.active {
     filter: brightness(1);
-  }
-  &.show {
-    display: block;
   }
 }
 
