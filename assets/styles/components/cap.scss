@@ -25,17 +25,9 @@
   height: 194px;
   background-color: #2E4EA4;
   overflow: hidden;
-  @include bg-icon('cap/cap_bg.webp');
-  @include media(md) {
-    @include bg-icon('cap/cap_bg_1024.webp');
-  }
-  @include media(sm) {
-    @include bg-icon('cap/cap_bg_768.webp');
-  }
   @include media(xs) {
     height: auto;
     padding-bottom: 65%;
-    @include bg-icon('cap/cap_bg_375.webp');
   }
 }
 
@@ -65,5 +57,4 @@
 
 .cap__image {
   height: 100%;
-  object-fit: cover;
 }
