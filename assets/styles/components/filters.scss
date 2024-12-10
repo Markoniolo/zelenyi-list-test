@@ -1,0 +1,127 @@
+.filters {
+  margin-bottom: 64px;
+  @include media(sm) {
+    margin-bottom: 32px;
+  }
+}
+
+.filters__cont {
+
+}
+
+.filters__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.filters__select {
+  position: relative;
+}
+
+.filters__select-value {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #323232;
+  cursor: pointer;
+  background-color: $white;
+  border-radius: 100px;
+  transition-property: color;
+  transition-duration: $transition-duration;
+  &:hover {
+    color: #00aeef;
+  }
+  &::after {
+    content: '';
+    @include bg-icon('ic_select_chevron_down.svg');
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    margin-left: 8px;
+    transition-property: transform;
+    transition-duration: $transition-duration;
+  }
+  &.active {
+    &::after {
+      transform: rotate(180deg);
+    }
+    & ~ .filters__select-area {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+}
+
+.filters__select-area {
+  padding-top: 16px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition-duration: $transition-duration;
+  transition-property: opacity;
+}
+
+.filters__select-list {
+  border-radius: 16px;
+  width: 340px;
+  gap: 8px;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+  background: $white;
+  padding: 16px 8px;
+  display: flex;
+  flex-wrap: wrap;
+  @include media(xs) {
+    width: 288px;
+  }
+}
+
+.filters__select-item {
+  width: auto;
+  &_row {
+    display: none;
+    .filters__select-checkbox:checked ~ .filters__select-checkbox-value {
+      &::after {
+        margin-left: 4px;
+      }
+    }
+  }
+  &.active {
+    display: flex;
+  }
+}
+
+.filters__select-checkbox {
+  display: none;
+  &:checked ~ .filters__select-checkbox-value {
+    color: $white;
+    background-color: $blue;
+    display: flex;
+    align-items: center;
+    &::after {
+      content: '';
+      @include bg-icon('ic_select_close.svg');
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+      margin-left: 8px;
+    }
+  }
+}
+
+.filters__select-checkbox-value {
+  display: block;
+  background: #eef3f9;
+  color: #323232;
+  text-align: center;
+  transition-property: color, background-color;
+  &:hover {
+    color: $white;
+  }
+}

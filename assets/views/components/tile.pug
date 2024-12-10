@@ -1,0 +1,48 @@
+-
+  const tileList = [
+    {
+      image: 'tile_1',
+      headline: 'Закупаем лекарства от 14 самых затратных редких болезней',
+      text: 'С 1 января 2023 года фонд «Круг добра» начал закупать лекарства от 14 самых затратных редких болезней. Дети с редкими заболеваниями будут обеспечены нужными лекарствами.',
+      like_count: '125',
+      like_color: 'dark'
+    },
+    {
+      image: 'tile_2',
+      headline: 'Введен Единый электронный сертификат',
+      text: 'Введен Единый электронный сертификат для приобретения технических средств реабилитации, лекарственных препаратов, медицинских изделий для людей с ограниченными возможностями здоровья.',
+      like_count: '124',
+      like_color: 'blue'
+    },
+    {
+      image: 'tile_3',
+      headline: 'Дополнительные гарантии трудоустройства людей с инвалидностью',
+      text: 'Установлены дополнительные гарантии трудоустройства людей с инвалидностью: обязанность работодателя будет считаться выполненной только после трудоустройства инвалида.',
+      like_count: false,
+      like_color: 'light'
+    }
+  ]
+
+.tile.section
+  .tile__cont.cont
+    .tile__top
+      h2.tile__title.title Достижения
+      .tile__result Всего 160
+    .tile__list
+      each line in [1,2,3]
+        each item in tileList
+          .tile__item
+            picture.tile__picture
+              source(srcset=staticImg(`tile/${item.image}.webp`) media=`(max-width: ${breakpoints.md})`)
+              img.tile__image(src=staticImg(`tile/${item.image}.webp`) alt='' loading=line !==1 ? 'lazy' : false)
+            .tile__inner
+              .tile__headline.title= item.headline
+              p.tile__text= item.text
+              .tile__line
+                .tile__tag.btn-blue Забота о каждом нуждающемся
+                .tile__like
+                  .tile__like-icon(class=`tile__like-icon_${item.like_color}`)
+                  if item.like_count
+                    .tile__like-count= item.like_count
+    .tile__button-box
+      button.tile__button.btn-blue.btn-blue_dark Показать ещё

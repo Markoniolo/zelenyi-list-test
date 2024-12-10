@@ -1,0 +1,106 @@
+.informer {
+
+}
+
+.informer__cont {
+
+}
+
+.informer__area {
+  position: relative;
+  border-radius: 20px;
+  background-color: $blue;
+  min-height: 257px;
+  display: flex;
+  padding: 49px 101px 44px 43px;
+  @include media(sm) {
+    padding: 28px 33px 33px;
+    min-height: 216px;
+  }
+  @include media(xs) {
+    padding: 28px 23px;
+    min-height: 387px;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 19px;
+    left: 18px;
+    right: 18px;
+    bottom: 13px;
+    @include bg-icon('informer/informer_bg.svg');
+    @include media(md) {
+      top: 38px;
+      right: 13px;
+      bottom: 32px;
+      left: 16px;
+    }
+    @include media(sm) {
+      top: 43px;
+      right: 20px;
+      bottom: 38px;
+      left: 16px;
+    }
+    @include media(xs) {
+      top: 117px;
+      left: 8px;
+      bottom: unset;
+      height: 64px;
+      max-width: 327px;
+      width: 100%;
+    }
+  }
+}
+
+.informer__box {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  @include media(xs) {
+    display: block;
+  }
+}
+
+.informer__headline {
+  color: $white;
+  margin-bottom: 18px;
+  font-weight: 600;
+  font-size: 32px;
+  @include media(xs) {
+    font-size: 24px;
+  }
+}
+
+.informer__button {
+  font-size: 17px;
+  line-height: 21px;
+}
+
+.informer__picture {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: 101px;
+  width: 240px;
+  height: 257px;
+  @include media(md) {
+    right: 54px;
+  }
+  @include media(sm) {
+    right: 23px;
+    width: 200px;
+    height: 214px;
+  }
+  @include media(xs) {
+    right: 0;
+    width: 240px;
+    height: 257px;
+  }
+}
+
+.informer__image {
+  height: 100%;
+}

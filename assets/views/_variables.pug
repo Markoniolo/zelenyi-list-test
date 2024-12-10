@@ -1,0 +1,16 @@
+-
+  const pathStatics = PRODUCTION ? 'statics' : '/statics'
+
+  function staticImg (image) {
+    return `${pathStatics}/img/${image}`
+  }
+
+  const pages = [
+    { view: 'index', name: 'главная' }
+  ]
+
+  const phone = { link: 'tel:+74955272121', mask: '+7 495 527 21 21' }
+
+  const breakpoints = {
+    xs: '374px', sm: '767px', md: '1023px', lg: '1399px'
+  }

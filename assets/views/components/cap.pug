@@ -1,0 +1,10 @@
+.cap
+  .cap__cont.cont
+    h1.cap__caption.caption Приоритеты
+    .cap__area
+      each item in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+        picture.cap__picture.active(class=`cap__picture_${item}` data-element="cap__picture")
+          source(srcset=staticImg(`cap/hero-mobile-bear${item}.webp`) media=`(max-width: ${breakpoints.sm})`)
+          source(srcset=staticImg(`cap/hero-tablet-small-bear${item}.webp`) media=`(max-width: ${breakpoints.md})`)
+          source(srcset=staticImg(`cap/hero-tablet-bear${item}.webp`) media=`(max-width: ${breakpoints.lg})`)
+          img.cap__image(src=staticImg(`cap/hero-bear${item}.webp`) alt='')

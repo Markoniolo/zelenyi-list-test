@@ -1,0 +1,44 @@
+.cont {
+  margin: 0 auto;
+  max-width: 1400px;
+  width: 100%;
+  padding: 0 110px;
+  @include media(md) {
+    padding: 0 20px;
+    max-width: 1024px;
+  }
+  @include media(sm) {
+    max-width: 768px;
+  }
+  @include media(xs) {
+    max-width: 520px;
+    padding: 0 16px;
+  }
+}
+
+.caption {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 39px;
+  @include media(sm) {
+    font-size: 24px;
+    line-height: 29px;
+  }
+}
+
+.title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  @include media(sm) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+.section {
+  margin-bottom: 128px;
+  @include media(sm) {
+    margin-bottom: 64px;
+  }
+}

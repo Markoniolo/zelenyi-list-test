@@ -1,0 +1,69 @@
+.cap {
+  margin-bottom: 32px;
+  @include media(sm) {
+    margin-bottom: 16px;
+  }
+}
+
+.cap__cont {
+
+}
+
+.cap__caption {
+  margin-bottom: 32px;
+  @include media(sm) {
+    margin-bottom: 16px;
+  }
+  @include media(xs) {
+    margin-bottom: 45px;
+  }
+}
+
+.cap__area {
+  position: relative;
+  border-radius: 20px;
+  height: 194px;
+  background-color: #2E4EA4;
+  overflow: hidden;
+  @include bg-icon('cap/cap_bg.webp');
+  @include media(md) {
+    @include bg-icon('cap/cap_bg_1024.webp');
+  }
+  @include media(sm) {
+    @include bg-icon('cap/cap_bg_768.webp');
+  }
+  @include media(xs) {
+    height: auto;
+    padding-bottom: 65%;
+    @include bg-icon('cap/cap_bg_375.webp');
+  }
+}
+
+.cap__picture {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  filter: brightness(0.5);
+  transition-property: filter;
+  transition-duration: $transition-duration;
+  &.active {
+    filter: brightness(1);
+  }
+  &.show {
+    display: block;
+  }
+}
+
+@for $i from 1 through 16 {
+  .cap__picture_#{$i} {
+    z-index: calc(17 - $i);
+  }
+}
+
+.cap__image {
+  height: 100%;
+  object-fit: cover;
+}

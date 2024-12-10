@@ -1,0 +1,14 @@
+-
+  const crumbsList = [
+    { href: '#', text: 'Главная' },
+    { href: false, text: 'Приоритеты' },
+  ]
+
+.crumbs
+  .crumbs__cont.cont
+    .crumbs__list
+      each item in crumbsList
+        if item.href
+          a.crumbs__link(href=item.href)= item.text
+        else
+          span.crumbs__link= item.text

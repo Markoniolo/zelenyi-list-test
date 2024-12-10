@@ -1,0 +1,26 @@
+-
+  const filtersSelectList = [
+    'Все направления','Забота о каждом нуждающемся','Развитие регионов и транспортной инфраструктуры страны',
+    'Культура, история, традиции','Образование и передовая наука','Развитие села','Крепкая семья','Экология для жизни',
+    'Разитие туризма','Развитие новых регионов','Государство для человека','Внешняя и оборонная политика',
+    'Здоровье человека','Экономика развития','Гражданская солидарность и молодежная политика',
+    'Хорошая работа — достаток в доме','Удобная и комфортная жизнь'
+  ]
+
+.filters(data-element='filters')
+  .filters__cont.cont
+    .filters__list
+      .filters__select
+        .filters__select-value(data-element='filters__select-value') Приоритеты
+        .filters__select-area
+          .filters__select-list
+            each item, index in filtersSelectList
+              label.filters__select-item
+                input.filters__select-checkbox(type='checkbox' checked = index === 0 name='priorities' value=item
+                  data-index=index data-element='filters__select-checkbox')
+                span.filters__select-checkbox-value.btn-blue= item
+      each item, index in filtersSelectList
+        label.filters__select-item.filters__select-item_row(class=index === 0 ? 'active' : false)
+          input.filters__select-checkbox(type='checkbox' name='priorities' value=item checked
+            data-element='filters__select-checkbox_row')
+          span.filters__select-checkbox-value.btn-blue= item
